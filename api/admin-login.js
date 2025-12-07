@@ -1,12 +1,11 @@
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
+  if (req.method !== "POST")
     return res.status(405).json({ message: "Method not allowed" });
-  }
 
   const { username, password } = req.body;
 
-  // Your authentication logic here
-  if (username === "admin" && password === "123456") {
+  // Example login check
+  if (username === "ashish@myagency.com" && password === "Maajanki@2025") {
     return res.status(200).json({ token: "fake-jwt-token" });
   }
 
