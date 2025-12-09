@@ -23,7 +23,7 @@ const __dirname = path.dirname(__filename);
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); // <- good to have
+app.use(express.urlencoded({ extended: true })); // good to have
 
 // Health check / root route
 app.get("/", (req, res) => {

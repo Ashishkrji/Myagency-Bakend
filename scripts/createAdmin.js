@@ -8,14 +8,14 @@ dotenv.config();
 async function createAdmin() {
   try {
     await mongoose.connect(process.env.MONGO_URI);
-    console.log("✅ Mongo connected");
+    console.log("Mongo connected");
 
     const email = "ashish@myagency.com";
     const plainPassword = "Maajanki@2025";
 
     const existingAdmin = await Admin.findOne({ email });
     if (existingAdmin) {
-      console.log("⚠️ Admin already exists with this email.");
+      console.log("Admin already exists with this email.");
       process.exit(0);
     }
 
@@ -26,13 +26,13 @@ async function createAdmin() {
       password: hashedPassword,
     });
 
-    console.log("🎉 Admin created successfully");
+    console.log("Admin created successfully");
     console.log("Login email:", email);
     console.log("Login password:", plainPassword);
 
     process.exit(0);
   } catch (err) {
-    console.error("❌ Error creating admin:", err);
+    console.error("Error creating admin:", err);
     process.exit(1);
   }
 }
